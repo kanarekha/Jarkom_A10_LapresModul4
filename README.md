@@ -42,11 +42,12 @@ Atur IP pada interface BLITAR yang mengarah ke client TULUNGAGUNG .
 
 <img width="555" alt="static" src="https://user-images.githubusercontent.com/57948206/101989667-9aa26780-3cd4-11eb-973a-2546264112c6.PNG">
 
-* Pada static routing juga dibutuhkan default routing agar router dapat mengirimkan paket sesuai dengan tujuan. Default routing dibutuhkan untuk router yang berada di bawah router utama, contoh: BLITAR
+* Pada static routing juga dibutuhkan default routing agar router dapat mengirimkan paket sesuai dengan tujuan. Default routing dibutuhkan untuk router yang berada di bawah router utama. contoh : BLITAR
 
 <img width="558" alt="default" src="https://user-images.githubusercontent.com/57948206/101989662-98d8a400-3cd4-11eb-88e9-cba3ca622f53.PNG">
 
 * Agar semua subnet dapat saling terhubung, tambahkan static routing berikut:
+
 SURABAYA
 ```
 192.168.0.16/28 via 192.168.0.6
@@ -98,7 +99,7 @@ BLITAR
 ```
 0.0.0.0/0 via 192.168.1.1
 ```
-* Melakukan ping test dengan cara klik logo surat di bagian menu. Apabila berhasil mengasilkan output success dan failed apabila gagal. Contoh ping SURABAYA KE SAMPANG
+* Melakukan ping test dengan cara klik logo surat di bagian menu. Apabila berhasil mengasilkan output success dan failed apabila gagal. Contoh : ping SURABAYA KE SAMPANG
 
 <img width="286" alt="yey" src="https://user-images.githubusercontent.com/57948206/101990371-42ba2f80-3cd9-11eb-99e3-e05b81530202.PNG">
 
