@@ -48,7 +48,8 @@ Atur IP pada interface BLITAR yang mengarah ke client TULUNGAGUNG .
 
 * Agar semua subnet dapat saling terhubung, tambahkan static routing berikut:
 SURABAYA
-```192.168.0.16/28 via 192.168.0.6
+```
+192.168.0.16/28 via 192.168.0.6
 192.168.2.0/23 via 192.168.0.6
 192.168.8.0/22 via 192.168.0.6
 192.168.0.0/30 via 192.168.0.6
@@ -58,30 +59,46 @@ SURABAYA
 192.168.0.12/30 via 192.168.0.10
 192.168.0.128/25 via 192.168.0.10
 192.168.24.0/21 via 192.168.0.10
-10.151.73.92/30 via 192.168.0.6```
+10.151.73.92/30 via 192.168.0.6
+```
 
 PASURUAN
-```192.168.0.128/25 via 192.168.0.14
+```
+192.168.0.128/25 via 192.168.0.14
 192.168.16.0/21 via 192.168.0.14
-0.0.0.0/0 via 192.168.0.9```
+0.0.0.0/0 via 192.168.0.9
+```
 
 PROBOLINGGO
-```0.0.0.0/0 via 192.168.0.13```
+```
+0.0.0.0/0 via 192.168.0.13
+```
 
 BATU 
-```192.168.0.16/28 via 192.168.2.3
+```
+192.168.0.16/28 via 192.168.2.3
 192.168.4.0/22 via 192.168.0.2
 192.168.1.0/24 via 192.168.0.2
 10.151.73.92/30 via 192.168.0.2
-0.0.0.0/0 via 192.168.0.5```
+0.0.0.0/0 via 192.168.0.5
+```
 
 MADIUN
-```0.0.0.0/0 via 192.168.2.1```
+```
+0.0.0.0/0 via 192.168.2.1
+```
 
 KEDIRI
-```192.168.4.0/22 via 192.168.1.3
-0.0.0.0/0 via 192.168.0.1```
+```
+192.168.4.0/22 via 192.168.1.3
+0.0.0.0/0 via 192.168.0.1
+```
 
 BLITAR
-```0.0.0.0/0 via 192.168.1.1```
+```
+0.0.0.0/0 via 192.168.1.1
+```
+* Melakukan ping test dengan cara klik logo surat di bagian menu. Apabila berhasil mengasilkan output success dan failed apabila gagal. Contoh ping SURABAYA KE SAMPANG
+
+<img width="286" alt="yey" src="https://user-images.githubusercontent.com/57948206/101990371-42ba2f80-3cd9-11eb-99e3-e05b81530202.PNG">
 
