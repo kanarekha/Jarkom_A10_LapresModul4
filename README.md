@@ -108,15 +108,15 @@ BLITAR
 * Melakukan pengelompokan dengan yang bersebelahan
 ![a](https://github.com/kanarekha/Jarkom_A10_LapresModul4/blob/main/img/a.png)
 * Lalu mengelompokkan ke tahap selanjutnya dengan menggabungkan yang paling ujung
-![a-b](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/a-b.png)
+![a-b](https://github.com/kanarekha/Jarkom_A10_LapresModul4/blob/main/img/a-b.png)
 * Lanjutkan pengelompokan sampai semua masuk kedalam pengelompokkan kecuali MOJOKERTO dan MALANG, karena IP yang akan digunakan oleh keduanya didapat dari NID DMZ
-![c](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/c.png)
-![d](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/d.png)
-![e](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/e.png)
-![e-f](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/e-f.png)
-![g](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/g.png)
+![c](https://github.com/kanarekha/Jarkom_A10_LapresModul4/blob/main/img/c.png)
+![d](https://github.com/kanarekha/Jarkom_A10_LapresModul4/blob/main/img/d.png)
+![e](https://github.com/kanarekha/Jarkom_A10_LapresModul4/blob/main/img/e.png)
+![e-f](https://github.com/kanarekha/Jarkom_A10_LapresModul4/blob/main/img/e-f.png)
+![g](https://github.com/kanarekha/Jarkom_A10_LapresModul4/blob/main/img/g.png)
 * Setelah melakukan pengelompokan, selanjutnya dilakukan perhitungan untuk pembagian address pada setiap UML dan setiap pengelompokan
-![cidr](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/cidr.png)
+![cidr](https://github.com/kanarekha/Jarkom_A10_LapresModul4/blob/main/img/cidr.png)
 * Selanjutnya adalah setting interface pada setiap UML, berikut adalah setting interface pada UML SURABAYA
 ```
 #cloud
