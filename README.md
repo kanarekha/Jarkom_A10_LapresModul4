@@ -103,3 +103,80 @@ BLITAR
 
 <img width="286" alt="yey" src="https://user-images.githubusercontent.com/57948206/101990371-42ba2f80-3cd9-11eb-99e3-e05b81530202.PNG">
 
+# CIDR
+* Membuat perhitungan untuk pada topologi menggunakan metode CIDR
+* Melakukan pengelompokan dengan yang bersebelahan
+![a](https://github.com/kanarekha/Jarkom_A10_LapresModul4/blob/main/img/a.png)
+* Lalu mengelompokkan ke tahap selanjutnya dengan menggabungkan yang paling ujung
+![a-b](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/a-b.png)
+* Lanjutkan pengelompokan sampai semua masuk kedalam pengelompokkan kecuali MOJOKERTO dan MALANG, karena IP yang akan digunakan oleh keduanya didapat dari NID DMZ
+![c](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/c.png)
+![d](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/d.png)
+![e](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/e.png)
+![e-f](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/e-f.png)
+![g](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/g.png)
+* Setelah melakukan pengelompokan, selanjutnya dilakukan perhitungan untuk pembagian address pada setiap UML dan setiap pengelompokan
+![cidr](https://github.com/kanarekha/Jarkom_A10_Modul3/blob/main/img/cidr.png)
+* Selanjutnya adalah setting interface pada setiap UML, berikut adalah setting interface pada UML SURABAYA
+```
+#cloud
+auto eth0
+iface eth0 inet static
+address 10.151.72.46
+netmask 255.255.255.252
+gateway 10.151.72.45
+
+#sampang
+auto eth1
+iface eth1 inet static
+address 192.168.4.1
+netmask 255.255.252.0
+
+#pasuruan
+auto eth2
+iface eth2 inet static
+address 192.168.1.1
+netmask 255.255.255.252
+
+#batu
+auto eth3
+iface eth3 inet static
+address 192.168.50.1
+netmask 255.255.255.252
+
+#mojokerto
+auto eth4
+iface eth4 inet static
+address 10.151.73.89
+netmask 255.255.255.252
+```
+* Untuk setting interface pada UML lainnya akan ada pada file di repository ini
+* Selanjutnyan adalah melakukan routing, yang pertama akan di routing adalah SURABAYA ke PASURUAN, BATU dan MALANG(karena MALANG berada di luar subnet G1)
+```
+#pasuruan D2/18
+route add -net 192.168.128.0 netmask 255.255.192.0 gw 192.168.192.2
+#batu D1/19
+route add -net 192.168.0.0 netmask 255.255.224.0 gw 192.168.32.2
+#malang
+route add -net 10.151.73.92 netmask 255.255.255.252 gw 192.168.32.2
+```
+* Karena PASURUAN belum kenal dengan BONDOWOSO, JEMBER dan BANYUWANGI, maka PASURUAN melakukan routing kepada router PROBOLINGGO yang mengenal BONDOWOSO, JEMBER dan BANYUWANGI setelah pengelompokan B2/20
+```
+#probilinggo B2/20
+route add -net 192.168.128.0 netmask 255.255.240.0 gw 192.168.144.2
+
+```
+* Karena BATU belum kenal semua yang berada di bagian kiri dan di bagian bawah, maka dilakukan routing pada router MADIUN dan KEDIRI. BATU juga routing pada MALANG agar bisa terhubung kepada SURABAYA
+```
+#kediri B1/21
+route add -net 192.168.0.0 netmask 255.255.248.0 gw 192.168.8.2
+#madiun A5/28
+route add -net 192.168.16.0 netmask 255.255.252.0 gw 192.168.18.3
+#malang pada kediri
+route add -net 10.151.73.92 netmask 255.255.255.252 gw 192.168.8.2
+```
+* Karena KEDIRI masih belum mengenal TULUNGAGUNG, maka dilakukan route pada KEDIRI kepada router BLITAR pada pengelompokan A1/22
+```
+#blitar
+route add -net 192.168.0.0 netmask 255.255.248.0 gw 192.168.4.3
+```
